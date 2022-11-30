@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+}
+html::-webkit-scrollbar{
+    display: none;
+}
+body{
+    background: linear-gradient(45deg, #fff, #000);
+    background-size: 200% 200%;
+    width: 100vw;
+    height: 100vh;
+}
+header{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: #13678A;
+    color: white;
+    padding: 8px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px 30px #13678A;
+    z-index: 4;
+}
+header h1{
+    text-shadow: 3px 5px 15px  #000;
+    cursor: pointer;
+}
+section#inputs{
+    position: relative;
+    width: 235px;
+    height: 250px;
+    padding: 20px;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #fff;
+    box-shadow: 0 0 10px 10px #fff;
+    
+    border-radius: 10px;
+    animation: emerge 1.5s ease-in-out;
+    z-index: 2;
+    transition: top 2s ease-out, box-shadow .5s ease-in-out;
+}
+@keyframes emerge{
+    from{
+        top: -350px;
+    }
+    to{
+        top: 50px;
+    }
+}
+section#inputs.active{
+    top: -500px;
+}
+section#inputs:hover{
+    box-shadow: 0 0 50px 20px #fff;
+}
+section#inputs legend{
+    padding-bottom: 15px;
+    font-size: 19px;
+}
+section#inputs .box-input{
+    position: relative;
+    width: 100%;
+    height: 70px;
+    margin-top: 10px;
+    padding: 0 30px;
+}
+section#inputs .box-input label{
+    font-size: 17px;
+}
+section#inputs .box-input input{
+    width: 80px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #000;
+}
+section#inputs .box-input input::-webkit-outer-spin-button,
+section#inputs .box-input input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+section#inputs .box-input input#height{
+    width: 65px;
+}
+/* Remover cores padrões do navegador no autocomplete */
+section#inputs .box-input input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #fff inset;
+    -webkit-text-fill-color: #000 !important;
+}
+section#inputs .box-input i{
+    position: absolute;
+    right: 110px;
+    top: 2px;
+    visibility: hidden;
+}
+/*Fazer icones aparecerem*/
+section#inputs .box-input.error i.icon-error{
+    visibility: visible;
+}
+section#inputs .box-input.success i.icon-success{
+    visibility: visible;
+}
+section#inputs .box-input.error i.icon-error{
+    visibility: visible;
+}
+section#inputs .box-input.success i.icon-success{
+    visibility: visible;
+}
+section#inputs .box-input span{
+    position: absolute;
+    top: 35px;
+    text-align: center;
+    width: 100%;
+    left: -30px;
+    color: #db5a5a;
+    font-size: 14px;
+}
+section#inputs .box-buttons{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+section#inputs .box-buttons button{
+    width: 40%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+}
+section#inputs .box-buttons button#calculate{
+    background-color: #13678A;
+    text-transform: uppercase;
+    transition: background-color .5s,  box-shadow 1s;
+}
+section#inputs .box-buttons button#calculate:hover{
+    background-color: #0d4157;
+    box-shadow: 0 0 20px 5px #13678A;
+}
+section#inputs .box-buttons button#cancel{
+    background-color: #888;
+    text-transform: uppercase;
+    transition: background-color .5s,  box-shadow 1s;
+}
+section#inputs .box-buttons button#cancel:hover{
+    background-color: #555;
+    box-shadow: 0 0 20px 5px #333;
+}
+section#result{
+    position: absolute;
+    top: -500px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 3;
+    width: 500px;
+    height: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 20px #fff;
+    transition: top 2s ease-out;
+}
+section#result.active{
+    top: 80px;
+}
+section#result h2{
+    width: 100%;
+    padding: 30px 0 0 0 ;
+    text-align: center;
+}
+section#result h3{
+    text-align: center;
+    padding: 15px 0;
+}
+section#result #box-images{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 10px; */
+    gap: 10px;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #13678A;
+    color: #fff;
+    height: 70px;
+}
+footer .wave{
+    position: absolute;
+    top: -75px;
+    width: 100%;
+    height: 100px;
+    background: url(../img/wave.png);
+    background-size: 1000px 100px;
+    left: 0;
+}
+footer .wave#wave1{
+    z-index: 2;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+}
+footer .wave#wave2{
+    z-index: 1;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWaveTwo 4s linear infinite;
+}
+footer .wave#wave3{
+    z-index: 2;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWave 3s linear infinite;
+}
+footer .wave#wave4{
+    z-index: 1;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWaveTwo 3s linear infinite;
+}
+@keyframes animateWave{
+    from{
+        background-position-x: 1000px;
+    }
+    to{
+        background-position-x: 0px;
+    }
+}
+@keyframes animateWaveTwo{
+    from{
+        background-position-x: 0px;
+    }
+    to{
+        background-position-x: 1000px;
+    }
+}
+footer ul{
+    column-count: 2;
+    gap: 15px;
+    z-index: 3;
+}
+footer li{
+    list-style: none;
+    font-size: 35px;
+    transition: transform .5s;
+}
+footer li:hover{
+    transform: translateY(-5px);
+}
+footer ul li a{
+    color: #fff;
+    text-decoration: none;
+    transition: color .5s;
+}
+footer ul li a:hover{
+    color: #dff;
+}
+@media (max-width: 600px){
+    section#result{
+        position: absolute;
+        top: -500px;
+        width: 100%;
+        height: 330px;
+        padding: 0;
+        transition: top 2s ease-out;
+    }
+    section#result.active{
+        top: 80px;
+    }
+    section#result #box-images{
+        width: 100%;
+    }
+    section#result #box-images .images{
+        width: 20%;
+    }
+    section#result #box-images .images img{
+        width: 100%;
+        height: 190px;
+    }
+    footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+    }
+}

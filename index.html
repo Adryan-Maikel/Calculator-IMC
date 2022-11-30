@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Imc</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/scripts.js" defer></script>
+    <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title" title="Calcular IMC">Calcular Imc</h1>
+    </header>
+    <section id="inputs">
+        <legend title="Insira seus dados abaixo.">Insira seus dados abaixo.</legend>
+        <div class="box-input">
+            <label for="height" title="Altura">Altura:</label>
+            <input type="number" name="height" id="height" placeholder="ex. 1,70">
+            <i class="icon-error"><img src="img/error-icon.svg" title="Erro!" alt="Icone de erro!"></i>
+            <i class="icon-success"><img src="img/success-icon.svg" title="Sucesso!" alt="Icone de sucesso!"></i>
+            <span id="error-height"></span>
+        </div>
+        <div class="box-input">
+            <label for="weight" title="Peso">Peso:</label>
+            <input type="number" name="weight" id="weight" placeholder="ex. 60,54">
+            <i class="icon-error"><img src="img/error-icon.svg" title="Erro!" alt="Icone de erro!"></i>
+            <i class="icon-success"><img src="img/success-icon.svg" title="Sucesso!" alt="Icone de sucesso!"></i>
+            <span id="error-weight"></span>
+        </div>
+        <div class="box-buttons">
+            <button type="button" id="calculate">Calcular</button>
+            <button type="button" id="cancel">Cancelar</button>
+        </div>
+    </section>
+    <section id="result">
+        <h2 title="Resultado">Resultado</h2>
+        <h3 id="imc">Seu imc é </h3>
+        <div id="box-images">
+            <figure class="images">
+                <img src="img/pesoBaixo.PNG" id="img-low" title="Menor que 18,5 peso baixo" alt="imagem contendo o imc de baixo peso">
+            </figure>
+            <figure class="images">
+                <img src="img/pesoNormal.PNG" id="img-normal" title="18,5 até 24,9 peso normal" alt="imagem contendo o imc de peso normal">
+            </figure>
+            <figure class="images">
+                <img src="img/pesoExesso.PNG" id="img-excess" title="25 até 29,9 exesso de peso" alt="imagem contendo o imc de exesso de peso">
+            </figure>
+            <figure class="images">
+                <img src="img/obesidade.PNG" id="img-obesity" title="maior que 30 obesidade" alt="imagem contendo o imc de obesidade">
+            </figure>
+            <figure class="images">
+                <img src="img/obesidadeExtrema.PNG" id="img-extreme-obesity" title="maior que 50 extrema obesidade" alt="imagem contendo o imc de obesidade extrema">
+            </figure>
+        </div>
+    </section>
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul>
+            <li>
+                <a href="https://github.com/AdryanMaikel" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </li>
+            <li>
+                <a href="mailto:adryanmaikel@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+            </li>
+        </ul>
+        <address>&copy; Adryan Maikel <i class="fa-solid fa-heart"></i></address>
+    </footer>
+</body>
+</html>
